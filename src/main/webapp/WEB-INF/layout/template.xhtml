@@ -41,20 +41,9 @@
 	<div id="innerHeader">
 	
 		<pretty:link mappingId="home">
-			<f:param value="#{localeBean.language}" />
 			<img title="IDEA LEGNO" src="#{cpath}/images/logo.gif"/>
 		</pretty:link>
 		
-		<div id="language">
-			<pretty:link rel="alternate" hreflang="it-IT" mappingId="#{utilBean.currentMappingId}" styleClass="#{localeBean.language == 'it' ? 'ln-selected' : null}">
-				<f:param value="it" />
-				IT
-			</pretty:link>
-			<pretty:link rel="alternate" hreflang="en-EN" mappingId="#{utilBean.currentMappingId}" styleClass="#{localeBean.language == 'en' ? 'ln-selected' : null}">
-				<f:param value="en" />
-				EN
-			</pretty:link>
-		</div>		
 		<div class="contatti">
 			<address>
 			VIA FIOROLLE 44A <br/>
@@ -70,31 +59,26 @@
 		<ul>
 			<li>
 				<pretty:link styleClass="#{menu == 'home' ? 'active' : null}" mappingId="home">
-					<f:param value="#{localeBean.language}" />
 					<div class="menu-div-1"><div>#{res['home.title']}</div></div>
 				</pretty:link>
 			</li>
 			<li>
 				<pretty:link styleClass="#{menu == 'prodotti' ? 'active' : null}" mappingId="prodotti">
-					<f:param value="#{localeBean.language}" />
 					<div class="menu-div-1"><div>#{res['prodotti.title']}</div></div>
 				</pretty:link>
 			</li>			
 			<li>
 				<pretty:link styleClass="#{menu == 'chi-siamo' ? 'active' : null}" mappingId="chi-siamo">
-					<f:param value="#{localeBean.language}" />
 					<div class="menu-div-1"><div>#{res['azienda.title']}</div></div>
 				</pretty:link>
 			</li>
 			<li>
 				<pretty:link styleClass="#{menu == 'activity' ? 'active' : null}" mappingId="activity">
-					<f:param value="#{localeBean.language}" />
 					<div class="menu-div-1"><div><h:outputText value="#{res['attivita.title']}" escape="false" /></div></div>
 				</pretty:link>
 			</li>
 			<li>
 				<pretty:link styleClass="#{menu == 'contatti' ? 'active' : null}" mappingId="contatti">
-					<f:param value="#{localeBean.language}" />
 					<div class="menu-div-1"><div>#{res['contatti.title']}</div></div>
 				</pretty:link>
 			</li>
