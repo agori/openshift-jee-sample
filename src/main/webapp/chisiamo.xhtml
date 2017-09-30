@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:pretty="http://ocpsoft.com/prettyfaces"
+                template="/WEB-INF/layout/template.xhtml">
+                
+    <ui:param name="menu" value="chi-siamo"/>
+    
+    <ui:define name="title">Azienda</ui:define>                                    
+                
+	<ui:define name="content">
+	
+		<h1><h:outputText value="#{res['azienda.title']}" escape="false" /></h1>
+		
+		<figure>	
+		<img style="float:right;" src="#{cpath}/img/pantografo-laser.jpg" title="#{res['azienda.image.pantografo_laser']}" />
+		</figure>	
+		 
+		<h:outputText value="#{res['azienda.chi_siamo']}" escape="false" />
+		
+		<figure>	
+		<img style="float:right;" src="#{cpath}/img/bancale-pannelli.jpg" title="#{res['azienda.image.bancale_pannelli']}"/>
+		</figure>
+		
+		<h:outputText value="#{res['azienda.certificazioni']}" escape="false" />
+					
+		<div class="clear"></div>
+	
+	</ui:define>                
+                
+</ui:composition>                

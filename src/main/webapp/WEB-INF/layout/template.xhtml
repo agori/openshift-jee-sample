@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html 
+	  xmlns="http://www.w3.org/1999/xhtml"		
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:pretty="http://ocpsoft.com/prettyfaces"
+      xmlns:f="http://java.sun.com/jsf/core"
+      lang="#{localeBean.locale.language}">
+<f:view lang="#{localbeBean.locale}">
+    <h:head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Idea Legno - <ui:insert name="title"></ui:insert></title>
+        <h:outputText value="#{res['meta.keywords']}" escape="false" />
+        <h:outputText value="#{res['meta.description']}" escape="false" />
+		
+		<link rel="shortcut icon" href="#{cpath}/images/mini-logo.gif" type="image/gif" />
+		<link rel="stylesheet" href="#{cpath}/style/layout.css" type="text/css" media="screen,projection" />
+		<link rel="stylesheet" href="#{cpath}/style/style.css" type="text/css" media="screen,projection" />
+		<ui:insert name="head"/>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31154297-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+    </h:head>
+    <h:body>
+
+<div id="wrapper">
+<header>
+<div id="header">
+	<div id="innerHeader">
+	
+		<pretty:link mappingId="home">
+			<f:param value="#{localeBean.language}" />
+			<img title="IDEA LEGNO" src="#{cpath}/images/logo.gif"/>
+		</pretty:link>
+		
+		<div id="language">
+			<pretty:link rel="alternate" hreflang="it-IT" mappingId="#{utilBean.currentMappingId}" styleClass="#{localeBean.language == 'it' ? 'ln-selected' : null}">
+				<f:param value="it" />
+				IT
+			</pretty:link>
+			<pretty:link rel="alternate" hreflang="en-EN" mappingId="#{utilBean.currentMappingId}" styleClass="#{localeBean.language == 'en' ? 'ln-selected' : null}">
+				<f:param value="en" />
+				EN
+			</pretty:link>
+		</div>		
+		<div class="contatti">
+			<address>
+			VIA FIOROLLE 44A <br/>
+			ROMANO D'EZZELINO (VI) <br/>
+			Tel. 0424 511119<br/>
+			Fax 0424 405927
+			</address>
+		</div>
+	
+		<h3>#{res['header.title']}</h3>
+
+		<nav>
+		<ul>
+			<li>
+				<pretty:link styleClass="#{menu == 'home' ? 'active' : null}" mappingId="home">
+					<f:param value="#{localeBean.language}" />
+					<div class="menu-div-1"><div>#{res['home.title']}</div></div>
+				</pretty:link>
+			</li>
+			<li>
+				<pretty:link styleClass="#{menu == 'prodotti' ? 'active' : null}" mappingId="prodotti">
+					<f:param value="#{localeBean.language}" />
+					<div class="menu-div-1"><div>#{res['prodotti.title']}</div></div>
+				</pretty:link>
+			</li>			
+			<li>
+				<pretty:link styleClass="#{menu == 'chi-siamo' ? 'active' : null}" mappingId="chi-siamo">
+					<f:param value="#{localeBean.language}" />
+					<div class="menu-div-1"><div>#{res['azienda.title']}</div></div>
+				</pretty:link>
+			</li>
+			<li>
+				<pretty:link styleClass="#{menu == 'activity' ? 'active' : null}" mappingId="activity">
+					<f:param value="#{localeBean.language}" />
+					<div class="menu-div-1"><div><h:outputText value="#{res['attivita.title']}" escape="false" /></div></div>
+				</pretty:link>
+			</li>
+			<li>
+				<pretty:link styleClass="#{menu == 'contatti' ? 'active' : null}" mappingId="contatti">
+					<f:param value="#{localeBean.language}" />
+					<div class="menu-div-1"><div>#{res['contatti.title']}</div></div>
+				</pretty:link>
+			</li>
+		</ul>
+		</nav>
+		
+		<div class="clear"></div>
+	
+	</div>
+</div>
+</header>
+
+<div id="content" class="#{menu == 'home' ? 'content-home' : ''}">
+	<div id="innerContent">
+	<ui:insert name="content"/>
+	</div>
+</div>
+
+<div id="push"></div>
+
+</div>
+
+<footer>
+<div id="footer">
+<div id="innerFooter">
+<div class="centeredFooter">
+<img src="#{cpath}/images/mini-logo.gif"/>
+<address>
+<p>
+IDEA LEGNO | VIA FIOROLLE 44A - ROMANO D’EZZELINO - VICENZA<br/>
+Tel. 0424 511119 | <a href="mailto:idealegno.gm@virgilio.it">idealegno.gm@virgilio.it</a> | P.I. 03155690245
+</p>
+</address>
+<img src="#{cpath}/images/mini-logo.gif"/>
+</div>
+</div>
+</div>
+</footer>
+
+     </h:body>
+</f:view>
+</html>

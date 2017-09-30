@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:pretty="http://ocpsoft.com/prettyfaces"
+                template="/WEB-INF/layout/template.xhtml">
+                
+    <ui:param name="menu" value="activity"/>
+    
+    <ui:define name="title">
+    	<h:outputText value="#{res['attivita.title']}" escape="false" />
+    </ui:define>                        
+                
+	<ui:define name="content">
+		<figure>	
+			<img style="float:right;border:none;"  src="#{cpath}/img/attivita-1.jpg"/>
+		</figure>
+		
+		<h1><h:outputText value="#{res['attivita.title']}" escape="false" /></h1>
+		
+		<p>
+			<h:outputText value="#{res['attivita.intro']}" escape="false" />		
+		</p>
+		
+		<h:outputText value="#{res['attivita.realizzazioni']}" escape="false" />		
+		
+		<div class="clear"></div>
+		
+		<figure>	
+		<img style="float:right;"  src="#{cpath}/img/laser.jpg" title="laser"/>
+		</figure>		
+		
+		<h:outputText value="#{res['attivita.lavorazioni']}" escape="false" />		
+
+
+		<div class="clear"></div>
+	
+	</ui:define>                
+                
+</ui:composition>                

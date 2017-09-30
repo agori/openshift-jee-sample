@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:pretty="http://ocpsoft.com/prettyfaces"
+                template="/WEB-INF/layout/template.xhtml">
+                
+    <ui:param name="menu" value="contatti"/>
+    
+    <ui:define name="title"><h:outputText value="#{res['contatti.title']}" escape="false" /></ui:define>                           
+                
+	<ui:define name="content">
+	
+		<h1><h:outputText value="#{res['contatti.title']}" escape="false" /></h1>
+
+
+
+	<div id="contatti">
+
+		<img src="#{cpath}/img/sede.jpg"/>
+		
+		<address>
+		<strong>
+		Via Fiorolle 44A<br/>
+		ROMANO D’EZZELINO (VI)<br/>
+		Tel. 0424 511119<br/>
+		Fax 0424 405927<br/>
+		<a href="mailto:idealegno.gm@virgilio.it">idealegno.gm@virgilio.it</a>
+		</strong>
+		</address>
+
+	</div>	
+
+	<div style="width: 50%;float:left;">
+	<iframe width="525" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Via+Fiorolle,+44a,+Romano+d'Ezzelino,+Italia&amp;aq=0&amp;oq=via+fiorolle+44a&amp;sll=38.410558,-32.34375&amp;sspn=46.819906,102.832031&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=Via+Fiorolle,+44,+36060+Romano+d'Ezzelino+Vicenza,+Veneto,+Italy&amp;ll=45.780342,11.777106&amp;spn=0.002574,0.006276&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Via+Fiorolle,+44a,+Romano+d'Ezzelino,+Italia&amp;aq=0&amp;oq=via+fiorolle+44a&amp;sll=38.410558,-32.34375&amp;sspn=46.819906,102.832031&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=Via+Fiorolle,+44,+36060+Romano+d'Ezzelino+Vicenza,+Veneto,+Italy&amp;ll=45.780342,11.777106&amp;spn=0.002574,0.006276&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+	</div>
+	
+	<div class="clear"></div>
+
+
+
+
+	</ui:define>                
+                
+</ui:composition>                

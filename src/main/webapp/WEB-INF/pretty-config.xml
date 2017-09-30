@@ -1,0 +1,39 @@
+<pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.3.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.3.2
+                                   		http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.2.xsd">
+                                   		
+	<url-mapping id="home">
+		<pattern value="/ln/#{language: localeBean.language}" />
+		<view-id value="/home.xhtml" />
+	</url-mapping>
+
+	<url-mapping id="chi-siamo">
+		<pattern value="/ln/#{language: localeBean.language}/azienda" />
+		<view-id value="/chisiamo.xhtml" />
+	</url-mapping>
+
+	<url-mapping id="prodotti">
+		<pattern value="/ln/#{language: localeBean.language}/prodotti" />
+		<view-id value="/prodotti.xhtml" />
+		<action>#{prodottiBean.loadProdotti}</action>
+	</url-mapping>
+
+	<url-mapping id="category">
+		<pattern value="/ln/#{language: localeBean.language}/prodotti/#{category:prodottiBean.category}" />
+		<view-id value="/prodotti.xhtml" />
+		<action>#{prodottiBean.loadProdotti}</action>
+	</url-mapping>
+
+	<url-mapping id="activity">
+		<pattern value="/ln/#{language: localeBean.language}/attivita" />
+		<view-id value="/activity.xhtml" />
+	</url-mapping>
+
+	<url-mapping id="contatti">
+		<pattern value="/ln/#{language: localeBean.language}/contatti" />
+		<view-id value="/contatti.xhtml" />
+	</url-mapping>
+
+
+</pretty-config>

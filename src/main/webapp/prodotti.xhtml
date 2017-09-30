@@ -1,0 +1,64 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:pretty="http://ocpsoft.com/prettyfaces"
+                template="/WEB-INF/layout/template.xhtml">
+                
+    <ui:param name="menu" value="prodotti"/>    
+    
+    <ui:define name="title"><h:outputText value="#{res['prodotti.title']}" escape="false" /></ui:define>         
+                
+	<ui:define name="head">
+		<script type="text/javascript">
+			var cpath = '#{cpath}';
+			var gallery = #{prodottiBean.jsonStore};
+		</script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+		<script type="text/javascript" src="#{cpath}/script/jquery.onhashchange.js"></script>
+		<script type="text/javascript" src="#{cpath}/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+		<link rel="stylesheet" href="#{cpath}/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="#{cpath}/script/prodotti.js"></script>
+	</ui:define>                       
+                
+	<ui:define name="content">
+	
+	<h1><h:outputText value="#{res['prodotti.title']}" escape="false" /></h1>
+	
+	<div class="prodotti">
+	
+		<nav>
+		<ul class="menu" style="float:left;">
+			<li><a rel="astucci-scatole" class="#{prodottiBean.category eq 'astucci-scatole' ? 'selected' : ''}" href="#{cpath}/ln/#{localeBean.language}/prodotti/astucci-scatole"><h:outputText value="#{res['prodotti.category.astucci_scatole']}" escape="false" /></a></li>
+			<li><a rel="targhe" class="#{prodottiBean.category eq 'targhe' ? 'selected' : ''}" href="#{cpath}/ln/#{localeBean.language}/prodotti/targhe"><h:outputText value="#{res['prodotti.category.targhe']}" escape="false" /></a></li>
+			<li><a rel="espositori" class="#{prodottiBean.category eq 'espositori' ? 'selected' : ''}" href="#{cpath}/ln/#{localeBean.language}/prodotti/espositori"><h:outputText value="#{res['prodotti.category.espositori']}" escape="false" /></a></li>
+			<li><a rel="complementi-accessori" class="#{prodottiBean.category eq 'complementi-accessori' ? 'selected' : ''}" href="#{cpath}/ln/#{localeBean.language}/prodotti/complementi-accessori"><h:outputText value="#{res['prodotti.category.complementi_accessori']}" escape="false" /></a></li>
+		</ul>
+		</nav>
+		
+		<p style="float:left;">
+			<h:outputText value="#{res['prodotti.intro']}" escape="false" />
+		</p>
+		
+		<div class="clear"></div>
+
+		<div id="gallery">
+		<ul>
+			<ui:repeat value="#{prodottiBean.prodotti}" var="it">
+			<li>
+				<a href="#{cpath}#{it.pathLarge}">
+					<img src="#{cpath}#{it.path}"/>
+				</a>
+			</li>
+			</ui:repeat>
+		</ul>
+		</div>
+		
+		<div class="clear"></div>
+		
+
+	</div>
+	
+	</ui:define>                
+                
+</ui:composition>                
